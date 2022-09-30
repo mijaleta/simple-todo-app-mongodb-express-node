@@ -24,7 +24,7 @@ require('./config/passport')(passport);
 const db = require('./config/database');
 
 // connect to mongoose
-mongoose.connect(db.mongoURI).then(() => {
+ mongoose.connect(db.mongoURI,{ useNewUrlParser: true,useUnifiedTopology: true }).then(() => {
     console.log('MongoDB connected...');
 }).catch(err => {
     console.log(err);
@@ -91,7 +91,7 @@ app.get('/about', (req,res) => {
 app.use('/users', users);
 app.use('/todos', todos);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
    console.log(`listening on port ${port}`);
