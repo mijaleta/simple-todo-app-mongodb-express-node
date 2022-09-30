@@ -1,3 +1,3 @@
 module.exports = {
-  mongoURI: 'mongodb://localhost:27017/tododb-dev'
+  mongoURI: 'mongodb+srv://miju:ab12cd@cluster0.uayl57y.mongodb.net/test?retryWrites=true&w=majority'
 }
