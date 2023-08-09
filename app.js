@@ -12,7 +12,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const app = express();
 const passport = require('passport');
-
+require('dotenv').config()
 // load routes
 const todos = require('./routes/todos');
 const users = require('./routes/users');
@@ -24,7 +24,7 @@ require('./config/passport')(passport);
 const db = require('./config/database');
 
 // connect to mongoose
- mongoose.connect(db.mongoURI,{ useNewUrlParser: true,useUnifiedTopology: true }).then(() => {
+ mongoose.connect(process.env.mongo_URI,{ useNewUrlParser: true,useUnifiedTopology: true }).then(() => {
     console.log('MongoDB connected...');
 }).catch(err => {
     console.log(err);
@@ -45,16 +45,13 @@ app.use(bodyParser.json());
 
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')));
-
 // method override
 app.use(methodOverride('_method'));
-
 // express session
 app.use(session({
   secret: 'secret',
   resave: true,
   saveUninitialized: true
-
 }));
 
 // add passport middleware

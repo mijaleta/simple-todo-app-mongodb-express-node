@@ -1,4 +1,3 @@
 module.exports = {
-  mongoURI: 'mongodb+srv://miju:ab12cd@cluster0.uayl57y.mongodb.net/test?retryWrites=true&w=majority'
-  // mongoURI: 'mongodb+srv://miju:ab12cd@cluster0.uayl57y.mongodb.net/test?retryWrites=true&w=majority'
+  MONGO_URI:'mongodb+srv://jumi:AMMAamma@cluster0.qmztfsl.mongodb.net/simple-todo-app-mongodb-express-node'
 }
